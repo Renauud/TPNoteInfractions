@@ -1,6 +1,9 @@
 <?php
+require_once("../modele/requete.php");
 class Connexion{
     private $db;
+
+    private $db_admin = ["login" => "admin", "mdp" => "admin"];
 
     function __construct(){
         $db_config["SGBD"] = "mysql";
@@ -32,6 +35,10 @@ class Connexion{
             $sql=[];
         }
         return $sql;
+    }
+
+    function estAdmin(string $login, string $mdp){
+        return $login == $this -> db_admin["login"] && $mdp == $this -> db_admin["mdp"];
     }
 }
 $connexion = new Connexion();
