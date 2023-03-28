@@ -7,6 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Infractions</h1>
+    <form method="post" action="login.php" name="form_login">
+
+        <h1>Infractions</h1>
+
+    </form>
 </body>
 </html>
