@@ -17,6 +17,7 @@
                 $a = "Vos";
             }
             echo "<h1>" . $a . " infractions : " . "</h1>";
+            echo "<p> Bonjour " . $req_np["nom"] . " !"
         ?>
         <table>
             <?php

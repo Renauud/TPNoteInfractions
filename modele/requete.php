@@ -14,6 +14,13 @@ $req_con =
 FROM conducteur
 WHERE no_permis = :login AND mdp = :mdp';
 
+
+//Requête nom prénom conducteur
+$req_np =
+'SELECT nom, prenom
+FROM conducteur c 
+WHERE c.no_permis = :login'
+
 // Requête infraction conducteur
 
 
