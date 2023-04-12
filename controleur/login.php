@@ -1,5 +1,7 @@
 <?php
     require_once("../modele/connexion.php");
+    require_once ("../modele/requete.php");
+
     session_start();
     $identifiant["login"] = $identifiant["motDePasse"] = "";
 
