@@ -1,0 +1,38 @@
+h1 {
+    background-color: #888888;
+    font-size: 2em;
+    height: 1.2em;
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: 0;
+}
+
+body {
+    width: 25%;
+}
+
+fieldset {
+    padding: 0;
+}
+
+input, label {
+    display:block;
+    margin-left: 30%; 
+}
+
+#connexion {
+    background-color: white;
+    border: 1px solid rgb(141, 141, 141);
+    padding: 5px 5px;
+}
+
+#connexion:hover {
+    background-color: grey;
+    color: #FFFFFF;
+}
+
+p {
+    text-align: center;
+    color: red;
+    margin-top: 0;
+}
