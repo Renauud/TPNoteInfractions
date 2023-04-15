@@ -32,10 +32,11 @@ $req_nb_inf =
 FROM infraction
 WHERE no_permis = :login";
 
-//
+// à finir
 $req_n°_inf ="
-SELECT
-
+SELECT id_inf
+FROM infraction
+WHERE
 ";
 
 // Requête connexion / voir si l'utilisateur existe

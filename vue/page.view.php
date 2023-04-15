@@ -8,7 +8,6 @@
     <title>Liste infractions</title>
 </head>
 <body>
-    <form method="post" action="page.php">
 
     <fieldset>
         <h1>
@@ -19,7 +18,13 @@
         <h2>
                 Bonjour
             <?= $identite . "," ?>
-            voici vos infractions :
+            <?php
+                if($identite == "Administrateur"){
+                    echo "voici la liste des infractions :";
+                }else{
+                    echo "voici vos infractions :";
+                }
+            ?>
         </h2>
 
         <table border=1px solid black>
@@ -47,9 +52,11 @@
                     echo "<td>" . $value["no_immat"] . "</td>";
                     echo "<td>" . $value["no_permis"] . "</td>";
                     echo "<td>" . $value["total"] . "</td>";
-                    echo "<form method='POST' action='ajouter.php'>";
-                    echo "<td> <input type=submit value='Modifier'></td>";
-                    echo "<td><input type='button' name='delInf' id='delInf' value='Supprimer'></td>";
+                    if($identite == "Administrateur") {
+                        echo "<form method='POST' action='ajouter.php'>";
+                        echo "<td> <input type=submit value='Modifier'></td>";
+                        echo "<td><input type='button' name='delInf' id='delInf' value='Supprimer'></td>";
+                    }
                     echo "</tr>";
                 }
                 ?>
@@ -63,6 +70,5 @@
 
     </fieldset>
 
-    </form>
 </body>
 </html>
