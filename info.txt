@@ -1,0 +1,22 @@
+ZELL Renaud
+VIARDOT Thibault
+
+comme l'entiereté du travail a été fait à la maison, je ne me souviens plus du chemin sur le serveur
+web, qui contient de toute manière des fichiers pas à jours
+Le code source est disponible sur github, vous pouvez le pull ou clone sans problème :
+https://github.com/Renauud/TPNoteInfractions
+
+identifiants gestionnaire du site:
+login : admin
+mdp : admin
+
+
+
+identifiants conducteurs :
+conducteur 1 :
+login : AZ67
+mdp : airpach
+
+conducteur 2 :
+login : AZ69
+mdp : cavalli
