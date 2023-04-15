@@ -37,7 +37,7 @@
                 <?php
                     foreach ($var as $key => $value) {
                         echo "<tr>";
-                        echo "<td>" . "<input type=submit value='Détail'>";
+                        echo "<td>" . "<input type=submit class='bouton_bleu' value='Détail'>";
                         echo "<form method='POST' action='detail.php'>";
                         echo "</td>";
                         echo "<td>" . $value["inf"] . "</td>";
@@ -46,8 +46,8 @@
                         echo "<td>" . $value["no_permis"] . "</td>";
                         echo "<td>" . $value["total"] . "</td>";
                         echo "<form method='POST' action='ajouter.php'>";
-                        echo "<td> <input type=submit value='Modifier'></td>";
-                        echo "<td><input type='button' value='Supprimer'></td>";
+                        echo "<td> <input type=submit class='bouton_bleu' value='Modifier'></td>";
+                        echo "<td><input type='button' class='bouton_rouge' value='Supprimer'></td>";
                         echo "</tr>";
                     }
                 ?>
