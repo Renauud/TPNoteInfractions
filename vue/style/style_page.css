@@ -1,0 +1,41 @@
+h1 {
+    background-color: #888888;
+    font-size: 2em;
+    height: 1.2em;
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: 0;
+}
+
+fieldset {
+    padding: 0;
+    padding-bottom: 3%;
+}
+
+h2 {
+    font-size: 1.2em;
+    margin-left: 2em;
+}
+
+body {
+    width: 40%;
+}
+
+table {
+    width: 70%;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+tbody {
+    text-align: right;
+}
+
+th {
+    background-color: #b6b6b6;
+}
+
+input {
+    text-align: center;
+    /* background-color: rgb(150, 208, 255); */
+}
