@@ -8,19 +8,26 @@
     <title>Liste infractions</title>
 </head>
 <body>
-    <form method="post" action="page.php">
 
     <fieldset>
         <h1>
             <?= $mode ?>
             des infractions
         </h1>
+
         <h2>
                 Bonjour
-            <?= $identite ?>
+            <?= $identite . "," ?>
+            <?php
+                if($identite == "Administrateur"){
+                    echo "voici la liste des infractions :";
+                }else{
+                    echo "voici vos infractions :";
+                }
+            ?>
         </h2>
 
-        <table border = 1px solid black>
+        <table border=1px solid black>
             <thead>
             <th id="detail"></th>
             <th>N°</th>
@@ -35,31 +42,33 @@
             <tbody>
             <form method="POST" action>
                 <?php
-                    foreach ($var as $key => $value) {
-                        echo "<tr>";
-                        echo "<td>" . "<input type=submit class='bouton_bleu' value='Détail'>";
-                        echo "<form method='POST' action='detail.php'>";
-                        echo "</td>";
-                        echo "<td>" . $value["inf"] . "</td>";
-                        echo "<td>" . $value["date"] . "</td>";
-                        echo "<td>" . $value["no_immat"] . "</td>";
-                        echo "<td>" . $value["no_permis"] . "</td>";
-                        echo "<td>" . $value["total"] . "</td>";
+                foreach ($var as $key => $value) {
+                    echo "<tr>";
+                    echo "<td>" . "<input type=submit class='bouton_bleu' value='Détail'>";
+                    echo "<form method='POST' action='detail.php'>";
+                    echo "</td>";
+                    echo "<td>" . $value["inf"] . "</td>";
+                    echo "<td>" . $value["date"] . "</td>";
+                    echo "<td>" . $value["no_immat"] . "</td>";
+                    echo "<td>" . $value["no_permis"] . "</td>";
+                    echo "<td>" . $value["total"] . "</td>";
+                    if($identite == "Administrateur") {
                         echo "<form method='POST' action='ajouter.php'>";
                         echo "<td> <input type=submit class='bouton_bleu' value='Modifier'></td>";
-                        echo "<td><input type='button' class='bouton_rouge' value='Supprimer'></td>";
-                        echo "</tr>";
+                        echo "<td><input type='button' name='delInf' class='bouton_rouge' id='delInf' value='Supprimer'></td>";
                     }
+                    echo "</tr>";
+                }
                 ?>
             </form>
             </tbody>
-             <tfoot>
-                <td colspan=100%><a href="../vue/ajouter.view.php">Ajouter</a></td>
-             </tfoot>
+            <tfoot>
+            <td colspan=100%><a href="../vue/ajouter.view.php">Ajouter</a></td>
+            </tfoot>
         </table>
+
 
     </fieldset>
 
-    </form>
 </body>
 </html>
