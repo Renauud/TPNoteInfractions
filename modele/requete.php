@@ -7,6 +7,14 @@ FROM comprend comp, delit d, infraction i
 WHERE d.id_delit = comp.id_delit AND i.id_inf=comp.id_inf AND i.no_permis = :login
 GROUP BY i.id_inf";
 
+//admin ver
+
+$req_tout_admin =
+    "SELECT i.id_inf as 'inf', i.date_inf AS 'date', i.no_immat AS 'no_immat', i.no_permis as 'no_permis' , SUM(d.montant) AS 'total'
+FROM comprend comp, delit d, infraction i
+WHERE d.id_delit = comp.id_delit AND i.id_inf=comp.id_inf
+GROUP BY i.id_inf";
+
 
 //req detail
 
@@ -62,12 +70,10 @@ FROM information_schema.columns
 WHERE table_name = 'infraction';
 ";
 
-$req_curseur =
-"
+//req del infraction
 
-DECLARE curs1 CURSOR FOR
-SELECT id_inf, date_inf, no_immat, no_permis
-FROM infraction
+$req_delete_inf ="
+DELETE FROM infraction WHERE no_permis = :login AND id_inf = :delInf;
 "
 
 ?>
